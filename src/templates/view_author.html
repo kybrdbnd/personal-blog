@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block head_title %}Author | {{ author.name|upper }} {% endblock %}
+{% block content %}
+    {% for post in posts %}
+        {{ post.title }} 
+        <br>
+        {{ post.content }}
+        <br><br>
+    {% endfor %}
+{% endblock %}

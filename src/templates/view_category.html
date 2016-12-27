@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+ {% block head_title %} Category | {{ category.title }} 
+ {% endblock %} 
+ {% block content %}
+	<h1>{{ category.title }}</h1> 
+
+	{% for post in posts %}
+	<div class="row">
+		<div class="col m12">
+			<div class="card hoverable">
+				<div class="card-content">
+					<span class="post-title">{{ post.title }}</span>
+					<div class="content-attributes">
+						By:-{{post.author}}, Updated On:-{{post.updated}}
+					</div>
+					<div class="blog-content">
+		    			<p>
+		        			{{ post.content }}
+		    			</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endfor %} 
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% block head_title %}Post | {{ instance.title|upper }}{% endblock %} {% block content %}
+<h1>{{instance.title}}</h1>
+<div class="content-attributes">
+    By:-{{ instance.author }}, Category:-{{ instance.category }}
+    <br>Updated on:-{{instance.created}}
+</div>
+<div class="blog-content">
+    <p>
+        {{ instance.content }}
+    </p>
+</div>
+{% endblock %}

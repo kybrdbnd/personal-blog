@@ -1,0 +1,55 @@
+{% extends "base.html" %} {% block head_title %} Welcome {% endblock %} {% block content %}
+<div class="row">
+    <div class="col m12">
+        <div class="card">
+            <div class="card-content">
+                {% for blog in blog_list %}
+                <ul>
+                    <li><span class="card-title">{{ blog.title }}</span></li>
+                    <div class="content-attributes">
+                        By:-{{blog.author}}, Updated On:-{{blog.created}}
+                    </div>
+                    <div class="blog-content">
+                        <p>
+                            {{ blog.content|truncatewords:30 }}
+                        </p>
+                    </div>
+                    <a href="{{ blog.get_absolute_url }}">View More</a>
+                    <br>
+                </ul>
+                {% endfor %}
+                <div class="pagination">
+                    <ul class="pagination">
+                        {% if blog_list.has_previous %}
+                        <li>
+                            <a href="?page={{ blog_list.previous_page_number }}">
+                                <i class="material-icons">chevron_left</i></a>
+                        </li>
+                        {% else %}
+                        <li class="disabled"><a href="#"><i class="material-icons">chevron_left</i></a>
+                        </li>
+                        {% endif %}
+                         {% for num_page in blog_list.paginator.page_range %}
+                            <li class="wave-effect"><a href="?page={{ num_page }}">{{ num_page }}</a></li>
+                        {% endfor %} 
+                        {% if blog_list.has_next %}
+                        <li>
+                            <a href="?page={{ blog_list.next_page_number }}">
+                                <i class="material-icons">chevron_right</i> </a>
+                        </li>
+                        {% else %}
+                        <li class="disabled"><a href="#"><i class="material-icons">chevron_right</i></a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <h1>Author</h1> {% for author in author_list %}
+<ul>
+    <li><a href="{{ author.get_absolute_url }}">{{ author.name }}</a></li>
+</ul>
+{% endfor %} -->
+{% endblock %}
