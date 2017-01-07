@@ -2,17 +2,36 @@
  {% block head_title %} Category | {{ category.title }} 
  {% endblock %} 
  {% block content %}
-	<h1>{{ category.title }}</h1> 
+	<h2>{{ category.title }}</h2> 
 
-	{% for post in posts %}
 	<div class="row">
-		<div class="col m12">
+	{% for post in posts %}
+		<div class="col m6">
 			<div class="card hoverable">
 				<div class="card-content">
-					<span class="post-title">{{ post.title }}</span>
-					<div class="content-attributes">
-						By:-{{post.author}}, Updated On:-{{post.updated}}
-					</div>
+					<div class="card-title" id="blog-title">{{ post.title|capfirst }}</div>
+                        <div id="blog-attributes">
+                            <div class="row">
+                                <div class="col m4"> 
+                                    <div class="blog-author">
+                                        <a href="{{post.author.get_absolute_url}}">
+                                        <span>
+                                           <i class="fa fa-user-o" aria-hidden="true"></i>  
+                                        </span>
+                                            {{post.author}}
+                                        </a>
+                                    </div> 
+                                </div>
+                                <div class="col m6">
+                                    <div id="blog-created">
+                                    <span>
+                                        <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                                    </span>
+                                        {{post.updated}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 					<div class="blog-content">
 		    			<p>
 		        			{{ post.content }}
@@ -21,6 +40,6 @@
 				</div>
 			</div>
 		</div>
+			{% endfor %}
 	</div>
-	{% endfor %} 
 {% endblock %}

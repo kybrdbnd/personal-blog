@@ -8,7 +8,7 @@
 <body>
     <header>
         <nav>
-            <div class="nav-wrapper">
+            <div class="nav-wrapper brown darken-3">
                 <a href="{% url 'blog:list' %}" class="brand-logo">Blog</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
@@ -26,19 +26,58 @@
     </header>
     <main>
         <div class="container">
-            {% block content %}
-             {% endblock %}
+            {% block content %} {% endblock %}
+            <div class="fixed-action-btn horizontal click-to-toggle">
+                <a class="btn-floating btn-large amber accent-3">
+                    <i class="material-icons">search</i>
+                </a>
+                <ul>
+                    <li>
+                    <a class="btn-floating amber accent-4" id="search-fab">
+                        <div id="search-post">
+                            <div class="input-field inline">
+                                <input id="email" type="email" class="validate">
+                                <label for="email" data-error="wrong" data-success="right"></label>
+                              </div>
+                        </div>
+                    </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </main>
-    <footer class="page-footer">
+    <footer class="page-footer brown darken-2">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <h5 class="white-text">Footer Content</h5>
-                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.
+                    <h5 class="white-text">Social Accounts</h5>
+                    <p class="grey-text text-lighten-4">
+                    <ul id="social-icons">
+                        <li class="social-link">
+                            <span>
+                                <i class="fa fa-facebook-f fa-2x" aria-hidden="true"></i>
+                            </span>
+                        </li>
+                        <li class="social-link">
+                            <span>
+                                <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+                            </span>
+                        </li>
+                        <li class="social-link">
+                            <span>
+                                <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+                            </span>
+                        </li>
+                        <li class="social-link">
+                            <span>
+                                <i class="fa fa-google-plus fa-2x" aria-hidden="true"></i>
+                            </span>
+                        </li>
+                    </ul>
+                    <!-- You can use rows and columns here to organize your footer content. -->
                     </p>
                 </div>
-                <div class="col l4 offset-l2 s12">
+                <!-- <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Links</h5>
                     <ul>
                         <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
@@ -46,13 +85,18 @@
                         <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
                         <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
                     </ul>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="footer-copyright">
             <div class="container">
-                © 2014 Copyright Text
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                © 2017 Pranav Puri | KYBRDBND
+                <a class="grey-text text-lighten-4 right" href="https://glacial-dusk-55638.herokuapp.com/" 
+                target="__blank">
+                         <span><i class="fa fa-spin fa-globe" aria-hidden="true"></i>
+                        </span>
+                         www.glacial-dusk-55638.herokuapp.com
+                </a>
             </div>
         </div>
     </footer>
