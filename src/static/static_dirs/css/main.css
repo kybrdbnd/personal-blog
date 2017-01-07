@@ -1,3 +1,27 @@
+/*global css*/
+
+p {
+    font-weight: 300;
+}
+
+
+/*global ends*/
+
+
+/*navbar */
+
+.brand-logo {
+    margin-left: 1.7em;
+}
+
+.blog-category {
+    margin-right: 5em;
+}
+
+
+/*navbar ends*/
+
+
 /*footer*/
 
 body {
@@ -27,25 +51,56 @@ main {
     margin-right: 18px;
 }
 
-#social-icons{
+#social-icons {
     display: inline-flex;
+    text-align: center;
 }
 
-.social-link{
-    margin-right: 2em;
+.social-link {
     color: white;
-    padding: 20px 20px 20px 20px;   /*top right bottom left*/
-}
-.fa-2x{
-    font-size: 1em;
+    padding: 15px 15px 15px 15px;
+    /*top right bottom left*/
 }
 
-.social-link:hover{
+.social-link:first-child {
+    margin-left: -15px;
+}
+
+.fa-2x {
+    font-size: 1.6em;
+    width: 30px;
+    height: 30px;
+}
+
+.social-link:hover {
     color: #5D4037;
     background-color: white;
     width: 100%;
     border-radius: 100%;
 }
+
+.contact-name {
+    font-size: 1.3em;
+    font-weight: 300;
+}
+
+.contact-details {
+    font-size: 1em;
+    font-weight: 300;
+}
+
+.contact-attributes {
+    margin: .7em;
+}
+
+.contact-attributes .fa-2x {
+    font-size: 1.3em;
+}
+
+
+/*footer ends*/
+
+
 /*main page*/
 
 #blog-title {
@@ -61,6 +116,23 @@ main {
     margin-top: 1.8em;
     margin-left: 1.6em;
     color: grey;
+    position: relative;
+}
+
+#blog-author,
+#blog-created {
+    display: inline-block;
+    margin-right: 4em
+}
+
+#blog-author > a {
+    color: grey;
+}
+
+#blog-author-name,
+#blog-created-date {
+    margin-left: -0.7em;
+    display: inline-block;
 }
 
 #blog-content {

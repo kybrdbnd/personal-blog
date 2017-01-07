@@ -9,26 +9,20 @@
             <div class="card-content hoverable">       
                     <div class="card-title" id="blog-title">{{ blog.title|capfirst }}</div>
                         <div id="blog-attributes">
-                            <div class="row">
-                                <div class="col m2"> 
-                                    <div class="blog-author">
-                                        <a href="{{blog.author.get_absolute_url}}">
-                                        <span>
-                                           <i class="fa fa-user-o" aria-hidden="true"></i>  
-                                        </span>
-                                            {{blog.author}}
-                                        </a>
-                                    </div> 
-                                </div>
-                                <div class="col m6">
-                                    <div id="blog-created">
+                                <div id="blog-author">
+                                    <a href="{{blog.author.get_absolute_url}}">
                                     <span>
-                                        <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                                       <i class="fa fa-user-o fa-2x" aria-hidden="true"></i>  
                                     </span>
-                                        {{blog.created}}
-                                    </div>
+                                        <div id="blog-author-name">{{blog.author}}</div>
+                                    </a>
+                                </div> 
+                                <div id="blog-created">
+                                    <span>
+                                        <i class="fa fa-calendar-o fa-2x" aria-hidden="true"></i>
+                                    </span>
+                                    <div id="blog-created-date">{{blog.created}}</div>
                                 </div>
-                            </div>
                         </div>
                     <div id="blog-content">
                         <p>

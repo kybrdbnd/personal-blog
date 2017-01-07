@@ -13,7 +13,9 @@
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     {% for category in category_list %}
-                    <li><a href="{{ category.get_absolute_url }}">{{ category.title }}</a></li>
+                    <li class="blog-category">
+                        <a href="{{ category.get_absolute_url }}">{{ category.title }}</a>
+                    </li>
                     {% endfor %}
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
@@ -33,14 +35,14 @@
                 </a>
                 <ul>
                     <li>
-                    <a class="btn-floating amber accent-4" id="search-fab">
-                        <div id="search-post">
-                            <div class="input-field inline">
-                                <input id="email" type="email" class="validate">
-                                <label for="email" data-error="wrong" data-success="right"></label>
-                              </div>
-                        </div>
-                    </a>
+                        <a class="btn-floating amber accent-4" id="search-fab">
+                            <div id="search-post">
+                                <div class="input-field inline">
+                                    <input id="email" type="email" class="validate">
+                                    <label for="email" data-error="wrong" data-success="right"></label>
+                                </div>
+                            </div>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -49,53 +51,85 @@
     <footer class="page-footer brown darken-2">
         <div class="container">
             <div class="row">
-                <div class="col l6 s12">
+                <div class="col l4 s12">
                     <h5 class="white-text">Social Accounts</h5>
                     <p class="grey-text text-lighten-4">
-                    <ul id="social-icons">
-                        <li class="social-link">
-                            <span>
+                        <ul id="social-icons">
+                            <li class="social-link">
+                                <span>
                                 <i class="fa fa-facebook-f fa-2x" aria-hidden="true"></i>
                             </span>
-                        </li>
-                        <li class="social-link">
-                            <span>
+                            </li>
+                            <li class="social-link">
+                                <span>
                                 <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
                             </span>
-                        </li>
-                        <li class="social-link">
-                            <span>
+                            </li>
+                            <li class="social-link">
+                                <span>
                                 <i class="fa fa-github fa-2x" aria-hidden="true"></i>
                             </span>
-                        </li>
-                        <li class="social-link">
-                            <span>
+                            </li>
+                            <li class="social-link">
+                                <span>
                                 <i class="fa fa-google-plus fa-2x" aria-hidden="true"></i>
                             </span>
-                        </li>
-                    </ul>
-                    <!-- You can use rows and columns here to organize your footer content. -->
+                            </li>
+                        </ul>
+                        <!-- You can use rows and columns here to organize your footer content. -->
                     </p>
                 </div>
-                <!-- <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Links</h5>
+                <div class="col l7 offset l1 s12">
+                    <h5 class="white-text">Contact Details</h5>
                     <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                        <div class="row">
+                            <div class="col m6 s12">
+                                <li class="contact-name">
+                                    <a class="grey-text text-lighten-3" href="#!">Pranav Puri</a></li>
+                                <div class="contact-details">
+                                    <ul>
+                                        <li class="contact-attributes">
+                                            <a class="grey-text text-lighten-3" href="#!">
+                                                <span><i class="fa fa-mobile fa-2x" aria-hidden="true"></i>
+                                                </span>: 8860270019</a>
+                                        </li>
+                                        <li class="contact-attributes">
+                                            <a class="grey-text text-lighten-3" href="#!">
+                                                <span><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i>
+                                                </span>: pranavpuri.p@hotmail.com</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col m6 s12">
+                                <li class="contact-name">
+                                    <a class="grey-text text-lighten-3" href="#!">Ramankit Singh</a></li>
+                                <div class="contact-details">
+                                    <ul>
+                                        <li class="contact-attributes">
+                                            <a class="grey-text text-lighten-3" href="#!">
+                                                <span><i class="fa fa-mobile fa-2x" aria-hidden="true"></i>
+                                                </span>: 8860270019</a>
+                                        </li>
+                                        <li class="contact-attributes">
+                                            <a class="grey-text text-lighten-3" href="#!">
+                                                <span><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i>
+                                                </span>: pranavpuri.p@hotmail.com</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </ul>
-                </div> -->
+                </div>
             </div>
         </div>
         <div class="footer-copyright">
             <div class="container">
                 © 2017 Pranav Puri | KYBRDBND
-                <a class="grey-text text-lighten-4 right" href="https://glacial-dusk-55638.herokuapp.com/" 
-                target="__blank">
-                         <span><i class="fa fa-spin fa-globe" aria-hidden="true"></i>
-                        </span>
-                         www.glacial-dusk-55638.herokuapp.com
+                <a class="grey-text text-lighten-4 right" href="https://glacial-dusk-55638.herokuapp.com/" target="__blank">
+                    <span><i class="fa fa-spin fa-globe" aria-hidden="true"></i>
+                        </span> www.glacial-dusk-55638.herokuapp.com
                 </a>
             </div>
         </div>

@@ -693,6 +693,12 @@
 		"whole_word": true,
 		"wrap": true
 	},
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
 	"groups":
 	[
 		{
