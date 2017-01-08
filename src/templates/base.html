@@ -26,6 +26,9 @@
             </div>
         </nav>
     </header>
+    <div class="progress">
+        <div class="indeterminate"></div>
+    </div>
     <main>
         <div class="container">
             {% block content %} {% endblock %}
@@ -135,9 +138,6 @@
         </div>
     </footer>
     {% include "js.html" %}
-    <script>
-    $(".button-collapse").sideNav();
-    </script>
 </body>
 
 </html>

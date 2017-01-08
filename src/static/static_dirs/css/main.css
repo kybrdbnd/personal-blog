@@ -8,6 +8,35 @@ p {
 /*global ends*/
 
 
+/*breadcrumb start*/
+
+#breadcrumb {
+    margin: 1.5em;
+    position: relative;
+}
+
+.breadcrumb-item {
+    font-size: 1.6em;
+    display: inline-block;
+}
+
+.breadcrumb-item {
+    margin-right: 0.5em
+}
+
+.breadcrumb-item > a {
+    color: black;
+}
+
+.breadcrumb-item:last-child > a {
+    font-size: 2em;
+    color: #663300;
+}
+
+
+/*breadcrumb ends*/
+
+
 /*navbar */
 
 .brand-logo {
@@ -36,19 +65,20 @@ main {
 
 .container {
     width: 80%;
+    /*overflow: ;*/
 }
 
 #search-fab {
-    margin-top: -20px;
-    height: 60px;
+    margin-top: -1.250em;
+    height: 3.750em;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 0.625em;
 }
 
 #search-post {
-    margin-top: -10px;
-    margin-left: 15px;
-    margin-right: 18px;
+    margin-top: -0.625em;
+    margin-left: 0.938em;
+    margin-right: 1.125em;
 }
 
 #social-icons {
@@ -58,12 +88,8 @@ main {
 
 .social-link {
     color: white;
-    padding: 15px 15px 15px 15px;
+    padding: 0.938em;
     /*top right bottom left*/
-}
-
-.social-link:first-child {
-    margin-left: -15px;
 }
 
 .fa-2x {
@@ -105,13 +131,13 @@ main {
 
 #blog-title {
     margin-top: 0.15em;
-    font-size: 10vh;
+    font-size: 4em;
     white-space: pre-line;
-    line-height: 70px;
-    padding-right: 10px;
+    line-height: 1em;
+    padding-right: 0.625em;
 }
 
-#blog-attributes {
+.blog-attributes {
     font-size: 0.85em;
     margin-top: 1.8em;
     margin-left: 1.6em;
@@ -119,24 +145,24 @@ main {
     position: relative;
 }
 
-#blog-author,
-#blog-created {
+.blog-author,
+.blog-created {
     display: inline-block;
     margin-right: 4em
 }
 
-#blog-author > a {
+.blog-author > a {
     color: grey;
 }
 
-#blog-author-name,
-#blog-created-date {
+.blog-author-name,
+.blog-created-date {
     margin-left: -0.7em;
     display: inline-block;
 }
 
-#blog-content {
-    font-size: 5vh;
+.blog-content {
+    font-size: 2em;
     color: #666666;
     line-height: 1.2em;
     margin-bottom: 0.938em;
@@ -146,3 +172,104 @@ main {
 .post-title {
     font-size: 7em;
 }
+
+
+/*category view*/
+
+.category-card {
+    height: 25em;
+    text-align: center;
+}
+
+.category-card:hover {
+    background-color: #4E342E;
+    /*opacity: .9;*/
+    color: white;
+    transition: linear .3s;
+}
+
+#category-card-view {
+    margin-top: 3em;
+}
+
+#category-title {
+    margin-top: 0.15em;
+    font-size: 3em;
+    white-space: pre-line;
+    padding-right: 0.625em;
+}
+
+.category-attributes {
+    font-size: 0.85em;
+    margin-top: 1.8em;
+    margin-left: 1.6em;
+    color: grey;
+    position: relative;
+}
+
+.category-author,
+.category-created {
+    display: inline-block;
+    margin-right: 3em;
+    margin-left: 3em;
+}
+
+.category-author > a {
+    color: grey;
+}
+
+.category-author-name,
+.category-created-date {
+    margin-left: -0.2em;
+    display: inline-block;
+}
+
+
+/*category view ends*/
+
+
+/*author view starts*/
+
+.author-card {
+    height: 25em;
+    text-align: center;
+}
+
+.author-card:hover {
+    background-color: #4E342E;
+    /*opacity: .9;*/
+    color: white;
+    transition: linear .3s;
+}
+
+#author-card-view {
+    margin-top: 3em;
+}
+
+#author-title {
+    margin-top: 0.15em;
+    font-size: 3em;
+    white-space: pre-line;
+    padding-right: 0.625em;
+}
+
+.author-attributes {
+    font-size: 0.85em;
+    margin-top: 1.8em;
+    margin-left: 1.6em;
+    color: grey;
+    position: relative;
+}
+
+.author-created {
+    display: inline-block;
+    margin-right: 3em;
+    /*margin-left: 3em;*/
+}
+
+.author-created-date {
+    margin-left: -0.2em;
+    display: inline-block;
+}
+
+/*author view ends*/

@@ -1,10 +1,35 @@
-{% extends "base.html" %}
-{% block head_title %}Author | {{ author.name|upper }} {% endblock %}
-{% block content %}
+{% extends "base.html" %} {% block head_title %}Author | {{ author.name|upper }} {% endblock %} {% block content %}
+<div id="breadcrumb">
+    <div class="breadcrumb-item"><a href="{% url 'blog:list' %}">Home</a></div>
+    <span><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i>
+    </span>
+    <div class="breadcrumb-item"><a href="{{author.name.get_absolute_url}}">{{ author.name }}</a></div>
+</div>
+<div class="row">
     {% for post in posts %}
-        {{ post.title }} 
-        <br>
-        {{ post.content }}
-        <br><br>
+    <div class="col m6 s12">
+        <div class="card hoverable author-card">
+            <div class="card-content">
+                <div id="author-card-view">
+                    <div class="card-title" id="author-title">{{ post.title|capfirst }}</div>
+                    <div class="author-attributes">
+                        <div class="author-created">
+                            <span>
+                                <i class="fa fa-calendar-o fa-2x" aria-hidden="true"></i>
+                            </span>
+                            <div class="author-created-date">{{post.created}}</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col m12">
+                            <a class="waves-effect waves-light btn amber accent-4" href="{{ post.get_absolute_url }}">View More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     {% endfor %}
+</div>
 {% endblock %}

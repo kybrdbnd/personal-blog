@@ -1,12 +1,36 @@
 {% extends "base.html" %} {% block head_title %}Post | {{ instance.title|upper }}{% endblock %} {% block content %}
-<h1>{{instance.title}}</h1>
-<div class="content-attributes">
-    By:-{{ instance.author }}, Category:-{{ instance.category }}
-    <br>Updated on:-{{instance.created}}
+<div id="breadcrumb">
+    <div class="breadcrumb-item"><a href="{% url 'blog:list' %}">Home</a></div>
+    <span><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></span>
+    <div class="breadcrumb-item">
+        <a href="{{instance.category.get_absolute_url}}">{{ instance.category }}</a></div>
+    <span><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></span>
+    <div class="breadcrumb-item"><a href="#">{{instance.title|capfirst}}</a></div>
 </div>
-<div class="blog-content">
-    <p>
-        {{ instance.content }}
-    </p>
+<div class="card">
+    <div class="card-content hoverable">
+        <div class="card-title" id="blog-title">{{ instance.title|capfirst }}</div>
+        <div class="blog-attributes">
+            <div class="blog-author">
+                <a href="{{instance.author.get_absolute_url}}">
+                    <span>
+                                       <i class="fa fa-user-o fa-2x" aria-hidden="true"></i>  
+                                    </span>
+                    <div class="blog-author-name">{{instance.author}}</div>
+                </a>
+            </div>
+            <div class="blog-created">
+                <span>
+                                        <i class="fa fa-calendar-o fa-2x" aria-hidden="true"></i>
+                                    </span>
+                <div class="blog-created-date">{{instance.created}}</div>
+            </div>
+        </div>
+        <div class="blog-content">
+            <p>
+                {{ instance.content}}
+            </p>
+        </div>
+    </div>
 </div>
 {% endblock %}
