@@ -44,7 +44,7 @@ p {
 }
 
 .blog-category {
-    margin-right: 5em;
+    margin-right: 1em;
 }
 
 
@@ -146,7 +146,9 @@ main {
 }
 
 .blog-author,
-.blog-created {
+.blog-created,
+.blog-likes-dislikes,
+.blog-comments {
     display: inline-block;
     margin-right: 4em
 }
@@ -156,9 +158,11 @@ main {
 }
 
 .blog-author-name,
-.blog-created-date {
+.blog-created-date,
+.blog-vote,
+.blog-comment {
     margin-left: -0.7em;
-    display: inline-block;
+    /* display: inline-block;*/
 }
 
 .blog-content {
@@ -197,6 +201,11 @@ main {
     font-size: 3em;
     white-space: pre-line;
     padding-right: 0.625em;
+}
+
+.category-card:hover .category-attributes,
+.category-card:hover .category-author > a {
+    color: white;
 }
 
 .category-attributes {
@@ -271,5 +280,6 @@ main {
     margin-left: -0.2em;
     display: inline-block;
 }
+
 
 /*author view ends*/

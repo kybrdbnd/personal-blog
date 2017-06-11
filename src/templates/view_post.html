@@ -16,14 +16,30 @@
                     <span>
                                        <i class="fa fa-user-o fa-2x" aria-hidden="true"></i>  
                                     </span>
-                    <div class="blog-author-name">{{instance.author}}</div>
+                    <span class="blog-author-name">{{instance.author}}</span>
                 </a>
             </div>
             <div class="blog-created">
                 <span>
                                         <i class="fa fa-calendar-o fa-2x" aria-hidden="true"></i>
                                     </span>
-                <div class="blog-created-date">{{instance.created}}</div>
+                <span class="blog-created-date">{{instance.created}}</span>
+            </div>
+            <div class="blog-likes-dislikes">
+                <span><i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true"></i>
+                        <span class="blog-vote">
+                        {{instance.likes_count}}</span>
+                </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span><i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>
+                        <span class="blog-vote">
+                        {{instance.dislikes_count}}</span></span>
+            </div>
+            <div class="blog-comments">
+                <span><i class="fa fa-comment-o fa-2x" aria-hidden="true"></i>
+                        </span>
+                <span class="blog-comment">
+                            {{instance.comments_count}}
+                        </span>
             </div>
         </div>
         <div class="blog-content">

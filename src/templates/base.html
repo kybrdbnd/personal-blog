@@ -17,6 +17,8 @@
                         <a href="{{ category.get_absolute_url }}">{{ category.title }}</a>
                     </li>
                     {% endfor %}
+                    <li class="blog-category"><a href="{% url 'account_login' %}">Sign In</a></li>
+                    <li class="blog-category"><a href="{% url 'account_signup' %}">Sign Up</a></li>
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
                     {% for category in category_list %}
@@ -26,9 +28,9 @@
             </div>
         </nav>
     </header>
-    <div class="progress">
+    <!-- <div class="progress">
         <div class="indeterminate"></div>
-    </div>
+    </div> -->
     <main>
         <div class="container">
             {% block content %} {% endblock %}
@@ -79,7 +81,6 @@
                             </span>
                             </li>
                         </ul>
-                        <!-- You can use rows and columns here to organize your footer content. -->
                     </p>
                 </div>
                 <div class="col l7 offset l1 s12">

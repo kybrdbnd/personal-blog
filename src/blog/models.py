@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.urlresolvers import reverse
+from django.contrib.auth.models import User
 
 
 # Create your models here.
@@ -37,9 +38,30 @@ class Blog(models.Model):
     updated = models.DateField(auto_now_add=False, auto_now=True)
     category = models.ForeignKey(Category)
     author = models.ForeignKey(Author)
+    likes = models.ManyToManyField(User,
+                                   blank=True,
+                                   related_name='blog_like')
+    dislikes = models.ManyToManyField(User,
+                                      blank=True,
+                                      related_name='blog_dislike')
+    comments = models.ManyToManyField(User,
+                                      blank=True,
+                                      related_name='blog_comment')
+
+    class Meta:
+        ordering = ['-updated']
 
     def __str__(self):
         return self.title
+
+    def likes_count(self):
+        return self.likes.count()
+
+    def dislikes_count(self):
+        return self.dislikes.count()
+
+    def comments_count(self):
+        return self.comments.count()
 
     def get_absolute_url(self):
         return reverse('blog:detail', kwargs={'slug': self.slug})

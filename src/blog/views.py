@@ -6,7 +6,7 @@ from .models import Category, Author, Blog
 
 # Create your views here.
 def post_list(request):
-    blog_list_query = Blog.objects.order_by('-created')
+    blog_list_query = Blog.objects.all()
     paginator = Paginator(blog_list_query, 4)
     page = request.GET.get('page')
     try:
