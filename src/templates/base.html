@@ -16,14 +16,24 @@
                     <li class="blog-category">
                         <a href="{{ category.get_absolute_url }}">{{ category.title }}</a>
                     </li>
-                    {% endfor %}
+                    {% endfor %} {% if user.is_authenticated %}
+                    <li class="blog-category"><a href="#!">{{user}}</a></li>
+                    <li class="blog-category"><a href="{% url 'account_logout' %}">Log Out</a></li>
+                    {% else%}
                     <li class="blog-category"><a href="{% url 'account_login' %}">Sign In</a></li>
                     <li class="blog-category"><a href="{% url 'account_signup' %}">Sign Up</a></li>
+                    {% endif%}
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
                     {% for category in category_list %}
                     <li><a href="{{ category.get_absolute_url }}">{{ category.title }}</a></li>
-                    {% endfor %}
+                    {% endfor %} {% if user.is_authenticated %}
+                    <li><a href="#!">{{user}}</a></li>
+                    <li><a href="{% url 'account_logout' %}">Log Out</a></li>
+                    {% else%}
+                    <li><a href="{% url 'account_login' %}">Sign In</a></li>
+                    <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
+                    {% endif%}
                 </ul>
             </div>
         </nav>
@@ -53,7 +63,7 @@
             </div>
         </div>
     </main>
-    {% include 'footer.html'%} {% include "js.html" %}
+    {% include 'footer.html'%} {% include "js.html" %}{%block extra_js%}{%endblock%}
 </body>
 
 </html>

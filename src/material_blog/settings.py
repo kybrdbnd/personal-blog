@@ -126,3 +126,8 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static', 'static_dirs'),
 )
 # MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")
+
+
+# all auth settings
+
+LOGIN_REDIRECT_URL = '/'

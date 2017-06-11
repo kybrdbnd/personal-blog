@@ -30,6 +30,18 @@ class Author(models.Model):
         return reverse('blog:author', kwargs={'slug': self.slug})
 
 
+class Comment(models.Model):
+    created = models.DateTimeField(auto_now_add=True, auto_now=False)
+    comment = models.TextField()
+    given_by = models.ForeignKey(User)
+
+    class Meta:
+        ordering = ['-created']
+
+    def __str__(self):
+        return self.comment
+
+
 class Blog(models.Model):
     title = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=100)
@@ -44,7 +56,7 @@ class Blog(models.Model):
     dislikes = models.ManyToManyField(User,
                                       blank=True,
                                       related_name='blog_dislike')
-    comments = models.ManyToManyField(User,
+    comments = models.ManyToManyField(Comment,
                                       blank=True,
                                       related_name='blog_comment')
 

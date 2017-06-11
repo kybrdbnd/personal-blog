@@ -49,4 +49,33 @@
         </div>
     </div>
 </div>
-{% endblock %}
+<div class="post_comment">
+    <ul class="collapsible popout" data-collapsible="accordion">
+    {% for comment in instance.comments.all%}
+    <li>
+        <div class="collapsible-header"><i class="material-icons">filter_drama</i> {{comment.given_by}}
+        </div>
+        <div class="collapsible-body"><span>{{comment.comment}}</span></div>
+    </li>
+    {% endfor%}
+</ul>
+
+</div>
+<div class="post_comment_submit">
+    <form action="" method='POST'>
+        {% csrf_token%}
+        <div class="row">
+            <div class="input-field col m12">
+                {{form.comment.errors}} {{form.comment}} {{form.comment.label_tag}}
+            </div>
+            <button class="waves-effect waves-light btn amber accent-4" action="submit">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %} {% block extra_js%}
+<script>
+$(document).ready(function(){
+   $('.collapsible').collapsible('open', 0);
+});
+</script>
+{% endblock%}
