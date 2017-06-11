@@ -1,0 +1,30 @@
+{%include 'css.html'%} {% load i18n %}
+<div class="container center-align">
+    <h1>Sign Up</h1>
+    <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+    <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+        {% csrf_token %}
+        <div class="row">
+            <div class="input-field col m6">
+                {{form.username.errors}} {{form.username}} {{form.username.label_tag}}
+            </div>
+            <div class="clearfix"></div>
+            <div class="input-field col m6">
+                {{form.email.errors}} {{form.email}} {{form.email.label_tag}}
+            </div>
+            <div class="clearfix"></div>
+            <div class="input-field col m6">
+                {{form.password1.errors}} {{form.password1}} {{form.password1.label_tag}}
+            </div>
+            <div class="clearfix"></div>
+            <div class="input-field col m6">
+                {{form.password2.errors}} {{form.password2}} {{form.password2.label_tag}}
+            </div>
+        </div>
+        <!-- {{ form.as_p }} -->
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" /> {% endif %}
+        <button class="btn waves-effect waves-light amber accent-4" type="submit">{% trans "Sign Up" %}</button>
+    </form>
+</div>
+{% include 'js.html' %} {% include 'footer.html'%}
